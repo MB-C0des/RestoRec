@@ -14,6 +14,14 @@ import time
 from pathlib import Path
 from statistics import mean
 
+import warnings
+
+warnings.filterwarnings(
+    "ignore",
+    category=DeprecationWarning,
+    module="langchain_community",
+)
+
 # Ensure Windows terminals can print emojis and other Unicode characters.
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(
@@ -61,31 +69,50 @@ EVALUATION_QUESTIONS = [
         "question": "Where can I find Indian food in Croydon?",
         "category": "Cuisine",
         "search_terms": ["indian", "curry", "tandoori", "biryani", "masala"],
-        "relevant_ids": set(),
+        "relevant_ids": {
+            "Places:14", "Places:43", "Places:52", "Places:57", "Places:70",
+            "Places:115", "Places:117", "Places:127", "Places:129", "Places:174",
+            "Places:179", "Places:180", "Places:182", "Places:223", "Places:249",
+            "Places:250", "Places:251", "Places:253", "Places:256", "Places:259",
+            "Places:264", "Places:293", "Places:302", "Places:304", "Places:311",
+            "Places:331", "Places:339", "Places:385", "Places:470", "Places:477",
+            "Places:561", "Places:565", "Places:566", "Places:568", "Places:612",
+            "Places:655", "Places:659", "Places:662", "Places:668", "Places:686",
+            "Places:693", "Places:716", "Places:745", "Places:748", "Places:752",
+            "Places:758", "Places:764", "Places:768", "Places:772", "Places:854",
+            "Places:856", "Places:857", "Places:921", "Places:922", "Places:923",
+            "Places:962", "Places:1013", "Places:1014", "Places:1038", "Places:1065",
+        },
     },
     {
         "question": "Where can I find Turkish food in Croydon?",
         "category": "Cuisine",
-        "search_terms": ["turkish", "kebab", "meze", "ocakbasi"],
-        "relevant_ids": set(),
+        "search_terms": ["turkish", "meze", "ocakbasi"],
+        "relevant_ids": {
+            "Places:44", "Places:106", "Places:109", "Places:169", "Places:173",
+            "Places:183", "Places:384", "Places:678", "Places:744",
+        },
     },
     {
         "question": "Where can I find Italian food in Croydon?",
         "category": "Cuisine",
-        "search_terms": ["italian", "pizza", "pasta", "risotto"],
-        "relevant_ids": set(),
+        "search_terms": ["italian", "pasta", "risotto"],
+        "relevant_ids": {
+            "TikTok:2", "Places:10", "Places:15", "Places:26", "Places:40",
+            "Places:170", "Places:171", "Places:239", "Places:528",
+        },
     },
     {
         "question": "Where can I find Spanish food in Croydon?",
         "category": "Cuisine",
         "search_terms": ["spanish", "tapas", "paella"],
-        "relevant_ids": set(),
+        "relevant_ids": {"Places:41", "Places:456", "Places:563"},
     },
     {
         "question": "Where can I find Brazilian food in Croydon?",
         "category": "Cuisine",
         "search_terms": ["brazilian", "brazil", "churrasco", "rodizio"],
-        "relevant_ids": set(),
+        "relevant_ids": {"Places:146", "Places:656", "Places:675"},
     },
 
     # Dish or restaurant type (4)
@@ -94,53 +121,91 @@ EVALUATION_QUESTIONS = [
         "category": "Dish",
         "search_terms": ["burger", "hamburger", "cheeseburger"],
         "relevant_ids": {
-            "TikTok:822", "TikTok:574", "Places:107", "Places:299",
-            "Places:309", "Places:509", "Places:717",
+            "TikTok:574", "TikTok:756", "TikTok:822", "Places:31", "Places:37",
+            "Places:58", "Places:84", "Places:107", "Places:153", "Places:178",
+            "Places:257", "Places:273", "Places:289", "Places:296", "Places:299",
+            "Places:309", "Places:316", "Places:322", "Places:345", "Places:364",
+            "Places:446", "Places:462", "Places:463", "Places:490", "Places:493",
+            "Places:504", "Places:508", "Places:509", "Places:513", "Places:533",
+            "Places:575", "Places:611", "Places:616", "Places:676", "Places:697",
+            "Places:702", "Places:717", "Places:739", "Places:741", "Places:753",
+            "Places:799", "Places:910", "Places:925", "Places:963", "Places:1029",
+            "Places:1034",
         },
     },
     {
         "question": "Where can I get pizza in Croydon?",
         "category": "Dish",
         "search_terms": ["pizza", "pizzeria"],
-        "relevant_ids": set(),
+        "relevant_ids": {
+            "TikTok:15", "TikTok:637", "Places:10", "Places:18", "Places:21",
+            "Places:36", "Places:48", "Places:55", "Places:61", "Places:65",
+            "Places:92", "Places:98", "Places:106", "Places:128", "Places:131",
+            "Places:132", "Places:136", "Places:144", "Places:171", "Places:188",
+            "Places:189", "Places:190", "Places:197", "Places:204", "Places:206",
+            "Places:209", "Places:224", "Places:280", "Places:346", "Places:366",
+            "Places:400", "Places:404", "Places:408", "Places:411", "Places:419",
+            "Places:464", "Places:479", "Places:520", "Places:522", "Places:556",
+            "Places:569", "Places:572", "Places:590", "Places:591", "Places:592",
+            "Places:595", "Places:605", "Places:624", "Places:630", "Places:647",
+            "Places:651", "Places:674", "Places:687", "Places:690", "Places:700",
+            "Places:709", "Places:730", "Places:747", "Places:763", "Places:771",
+            "Places:774", "Places:780", "Places:791", "Places:798", "Places:816",
+            "Places:817", "Places:841", "Places:855", "Places:858", "Places:873",
+            "Places:898", "Places:906", "Places:972", "Places:996", "Places:1006",
+        },
     },
     {
         "question": "Where can I get sushi in Croydon?",
         "category": "Dish",
         "search_terms": ["sushi", "maki", "sashimi", "nigiri"],
-        "relevant_ids": set(),
+        "relevant_ids": {
+            "Places:19", "Places:46", "Places:49", "Places:100", "Places:241",
+            "Places:358", "Places:417", "Places:480", "Places:498", "Places:734",
+            "Places:911", "Places:998", "Places:1033",
+        },
     },
     {
-        "question": "Where can I find a good steak in Croydon?",
+        "question": "Where can I find a steakhouse in Croydon?",
         "category": "Dish",
-        "search_terms": ["steak", "steakhouse", "grill"],
-        "relevant_ids": set(),
+        "search_terms": ["steak house", "steakhouse", "steaks"],
+        "relevant_ids": {"Places:97", "Places:319"},
     },
 
-    # Location (4)
+    # Location with a second constraint (4)
     {
-        "question": "Which restaurants are near East Croydon station?",
+        "question": "Where can I find food at Boxpark Croydon?",
         "category": "Location",
-        "search_terms": ["east croydon", "east croydon station"],
-        "relevant_ids": set(),
+        "search_terms": ["boxpark", "99 george st"],
+        "relevant_ids": {
+            "Places:486", "Places:507", "Places:756", "Places:758",
+            "Places:780", "Places:781",
+        },
     },
     {
-        "question": "Where can I eat in South Croydon?",
+        "question": "Where can I find Indian food in South Croydon?",
         "category": "Location",
-        "search_terms": ["south croydon"],
-        "relevant_ids": set(),
+        "search_terms": ["south croydon", "indian"],
+        "relevant_ids": {
+            "Places:302", "Places:311", "Places:331", "Places:339", "Places:435",
+            "Places:565", "Places:566", "Places:568", "Places:962", "Places:1013",
+            "Places:1014",
+        },
     },
     {
-        "question": "Which restaurants are in Thornton Heath?",
+        "question": "Where can I find Indian food in Thornton Heath?",
         "category": "Location",
-        "search_terms": ["thornton heath"],
-        "relevant_ids": set(),
+        "search_terms": ["thornton heath", "indian"],
+        "relevant_ids": {
+            "Places:249", "Places:250", "Places:253", "Places:256", "Places:561",
+            "Places:668", "Places:916", "Places:921", "Places:922", "Places:923",
+        },
     },
     {
-        "question": "Where can I eat in Purley?",
+        "question": "Where can I find sushi in Purley?",
         "category": "Location",
-        "search_terms": ["purley"],
-        "relevant_ids": set(),
+        "search_terms": ["purley", "sushi"],
+        "relevant_ids": {"Places:46", "Places:49", "Places:100", "Places:417"},
     },
 
     # Dietary requirement (3)
@@ -148,49 +213,74 @@ EVALUATION_QUESTIONS = [
         "question": "Which restaurants serve halal food?",
         "category": "Dietary",
         "search_terms": ["halal"],
-        "relevant_ids": {"Places:47"},
+        "relevant_ids": {
+            "TikTok:61", "Places:47", "Places:85", "Places:108", "Places:114",
+            "Places:319", "Places:604", "Places:696", "Places:740", "Places:776",
+            "Places:878", "Places:1016", "Places:1055", "Places:1069",
+        },
     },
     {
         "question": "Where can I find vegan food in Croydon?",
         "category": "Dietary",
         "search_terms": ["vegan", "plant based", "plant-based"],
-        "relevant_ids": {"Places:558", "Places:107"},
+        "relevant_ids": {
+            "Places:38", "Places:39", "Places:41", "Places:42", "Places:43",
+            "Places:46", "Places:47", "Places:48", "Places:51", "Places:52",
+            "Places:57", "Places:68", "Places:96", "Places:107", "Places:239",
+            "Places:302", "Places:304", "Places:344", "Places:486", "Places:487",
+            "Places:494", "Places:495", "Places:507", "Places:508", "Places:558",
+            "Places:567", "Places:568", "Places:569", "Places:604", "Places:655",
+            "Places:668", "Places:756", "Places:777", "Places:781", "Places:794",
+            "Places:800", "Places:801", "Places:802", "Places:803", "Places:823",
+            "Places:844", "Places:944", "Places:955", "Places:960", "Places:995",
+            "Places:1014", "Places:1038",
+        },
     },
     {
-        "question": "Which restaurants have gluten-free options?",
+        "question": "Where can I find vegan burgers in Croydon?",
         "category": "Dietary",
-        "search_terms": ["gluten free", "gluten-free", "coeliac", "celiac"],
-        "relevant_ids": set(),
+        "search_terms": ["vegan burger", "vegan burgers"],
+        "relevant_ids": {"Places:107"},
     },
 
     # Price or atmosphere (2)
     {
-        "question": "Where can I find affordable restaurants in Croydon?",
+        "question": "Where can I find food on a £20 budget in Croydon?",
         "category": "Price/Atmosphere",
-        "search_terms": ["affordable", "cheap", "budget", "good value", "inexpensive"],
-        "relevant_ids": set(),
+        "search_terms": ["£20 budget", "20 budget", "food market"],
+        "relevant_ids": {"TikTok:335"},
     },
     {
         "question": "Which restaurants are good for a date night in Croydon?",
         "category": "Price/Atmosphere",
         "search_terms": ["date night", "romantic", "cosy", "cozy", "intimate"],
-        "relevant_ids": set(),
+        "relevant_ids": {
+            "TikTok:457", "Places:40", "Places:41", "Places:42", "Places:51",
+            "Places:97", "Places:154", "Places:239", "Places:293", "Places:302",
+            "Places:377", "Places:495", "Places:563", "Places:567", "Places:656",
+            "Places:960",
+        },
     },
 
     # Combined constraints (2)
     {
-        "question": "Where can I find halal burgers in Croydon?",
+        "question": "Where can I find halal food near East Croydon station?",
         "category": "Combined",
-        "search_terms": ["halal burger", "halal", "burger"],
-        "relevant_ids": set(),
+        "search_terms": ["halal", "george st", "college square", "east croydon"],
+        "relevant_ids": {"Places:776", "Places:1055"},
     },
     {
         "question": "Where can I find vegan food near East Croydon station?",
         "category": "Combined",
-        "search_terms": ["vegan", "plant based", "east croydon"],
-        "relevant_ids": set(),
+        "search_terms": ["vegan", "plant based", "east croydon", "george st"],
+        "relevant_ids": {
+            "Places:239", "Places:486", "Places:487", "Places:494", "Places:507",
+            "Places:508", "Places:756", "Places:781", "Places:794", "Places:800",
+            "Places:801",
+        },
     },
 ]
+
 
 
 
