@@ -1,0 +1,61 @@
+﻿question,category,method,precision_at_k,recall_at_k,reciprocal_rank,ndcg_at_k,average_time_ms,retrieved_ids
+Where can I find Indian food in Croydon?,Cuisine,Dense,0.0,0.0,0.0,0.0,67.03997199656442,TikTok:335;TikTok:282;TikTok:41;Reddit:24;Reddit:14;Places:784;Places:435;Places:485
+Where can I find Indian food in Croydon?,Cuisine,BM25,0.25,0.03333333333333333,0.14285714285714285,0.16410877281833391,31.906874991060857,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:1039;Places:856;Places:264
+Where can I find Indian food in Croydon?,Cuisine,Hybrid,0.0,0.0,0.0,0.0,65.05906933549947,TikTok:282;TikTok:528;TikTok:335;Reddit:24;Reddit:14;Places:784;Places:435;Places:485
+Where can I find Turkish food in Croydon?,Cuisine,Dense,0.375,0.3333333333333333,0.16666666666666666,0.2542087814707016,58.02022200077772,TikTok:335;TikTok:528;TikTok:559;Reddit:24;Reddit:15;Places:678;Places:384;Places:109
+Where can I find Turkish food in Croydon?,Cuisine,BM25,0.375,0.3333333333333333,0.16666666666666666,0.2542087814707016,5.077152668188016,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:106;Places:183;Places:384
+Where can I find Turkish food in Croydon?,Cuisine,Hybrid,0.375,0.3333333333333333,0.16666666666666666,0.2542087814707016,59.44812499122539,TikTok:528;TikTok:559;TikTok:282;Reddit:24;Reddit:21;Places:384;Places:678;Places:109
+Where can I find Italian food in Croydon?,Cuisine,Dense,0.5,0.4444444444444444,0.5,0.4137978585955979,61.44563899821757,TikTok:335;TikTok:2;TikTok:282;Reddit:24;Reddit:17;Places:239;Places:528;Places:170
+Where can I find Italian food in Croydon?,Cuisine,BM25,0.125,0.1111111111111111,0.14285714285714285,0.08431423425588572,4.9834860013409825,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:1001;Places:26;Places:1039
+Where can I find Italian food in Croydon?,Cuisine,Hybrid,0.5,0.4444444444444444,0.3333333333333333,0.3806801328545302,84.68830533577905,TikTok:282;TikTok:335;TikTok:2;Reddit:24;Reddit:17;Places:170;Places:171;Places:239
+Where can I find Spanish food in Croydon?,Cuisine,Dense,0.0,0.0,0.0,0.0,104.5985279973441,TikTok:528;TikTok:326;TikTok:282;Reddit:24;Reddit:21;Places:781;Places:239;Places:487
+Where can I find Spanish food in Croydon?,Cuisine,BM25,0.25,0.6666666666666666,0.16666666666666666,0.3152014104491349,9.124777333151238,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:456;Places:1039;Places:41
+Where can I find Spanish food in Croydon?,Cuisine,Hybrid,0.0,0.0,0.0,0.0,551.478791666644,TikTok:528;TikTok:282;TikTok:326;Reddit:24;Reddit:21;Places:781;Places:239;Places:487
+Where can I find Brazilian food in Croydon?,Cuisine,Dense,0.375,1.0,0.16666666666666666,0.4716276524567204,97.35213933163323,TikTok:335;TikTok:326;TikTok:282;Reddit:14;Reddit:24;Places:675;Places:656;Places:146
+Where can I find Brazilian food in Croydon?,Cuisine,BM25,0.125,0.3333333333333333,0.14285714285714285,0.15642624200758548,7.715083328851809,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:1039;Places:675;Places:319
+Where can I find Brazilian food in Croydon?,Cuisine,Hybrid,0.375,1.0,0.16666666666666666,0.4716276524567204,60.78586100193206,TikTok:282;TikTok:528;TikTok:559;Reddit:24;Reddit:21;Places:675;Places:146;Places:656
+Where can I get burgers in Croydon?,Dish,Dense,0.625,0.10869565217391304,1.0,0.6296253372353894,79.97465300043889,TikTok:822;Reddit:10;Reddit:8;Places:717;Places:509;Places:299;Places:633;Places:533
+Where can I get burgers in Croydon?,Dish,BM25,0.375,0.06521739130434782,0.16666666666666666,0.2542087814707016,6.09761100107183,TikTok:157;TikTok:209;TikTok:617;Reddit:12;Reddit:5;Places:107;Places:799;Places:309
+Where can I get burgers in Croydon?,Dish,Hybrid,0.5,0.08695652173913043,1.0,0.5071514842383588,59.78519466104141,TikTok:822;TikTok:157;TikTok:209;Reddit:10;Reddit:24;Places:107;Places:717;Places:509
+Where can I get pizza in Croydon?,Dish,Dense,0.75,0.08,1.0,0.7645921559984155,110.13273599382956,TikTok:637;TikTok:15;Reddit:24;Reddit:10;Places:798;Places:346;Places:132;Places:569
+Where can I get pizza in Croydon?,Dish,BM25,0.375,0.04,0.3333333333333333,0.30088559429208195,11.18298600097963,TikTok:157;TikTok:209;TikTok:637;Reddit:12;Reddit:5;Places:21;Places:522;Places:799
+Where can I get pizza in Croydon?,Dish,Hybrid,0.625,0.06666666666666667,1.0,0.666740561363255,70.7396526656036,TikTok:637;TikTok:15;TikTok:157;Reddit:24;Reddit:10;Places:798;Places:346;Places:132
+Where can I get sushi in Croydon?,Dish,Dense,0.375,0.23076923076923078,0.16666666666666666,0.2542087814707016,58.72794433768528,TikTok:470;TikTok:349;TikTok:520;Reddit:12;Reddit:24;Places:19;Places:1033;Places:734
+Where can I get sushi in Croydon?,Dish,BM25,0.0,0.0,0.0,0.0,5.092430340785843,TikTok:157;TikTok:209;TikTok:617;Reddit:12;Reddit:5;Places:319;Places:479;Places:1006
+Where can I get sushi in Croydon?,Dish,Hybrid,0.375,0.23076923076923078,0.16666666666666666,0.2542087814707016,76.10359733128765,TikTok:470;TikTok:349;TikTok:520;Reddit:12;Reddit:24;Places:19;Places:1033;Places:734
+Where can I find a steakhouse in Croydon?,Dish,Dense,0.0,0.0,0.0,0.0,89.15318066525894,Places:299;Places:718;Places:697;Places:958;Places:239;Places:744;Places:788;Places:1044
+Where can I find a steakhouse in Croydon?,Dish,BM25,0.0,0.0,0.0,0.0,6.998513674867961,TikTok:157;TikTok:617;TikTok:209;Reddit:12;Reddit:24;Places:491;Places:1012;Places:793
+Where can I find a steakhouse in Croydon?,Dish,Hybrid,0.0,0.0,0.0,0.0,63.50991666355791,TikTok:157;TikTok:617;TikTok:209;Reddit:12;Reddit:24;Places:299;Places:718;Places:697
+Where can I find food at Boxpark Croydon?,Location,Dense,0.0,0.0,0.0,0.0,65.26658332829054,TikTok:709;TikTok:335;TikTok:2;Reddit:24;Reddit:21;Places:757;Places:753;Places:473
+Where can I find food at Boxpark Croydon?,Location,BM25,0.0,0.0,0.0,0.0,6.95348600371896,TikTok:341;TikTok:282;TikTok:400;Reddit:24;Reddit:21;Places:473;Places:395;Places:958
+Where can I find food at Boxpark Croydon?,Location,Hybrid,0.125,0.16666666666666666,0.14285714285714285,0.10086747116627115,82.95544433349278,TikTok:528;TikTok:282;TikTok:400;Reddit:24;Reddit:21;Places:473;Places:758;Places:958
+Where can I find Indian food in South Croydon?,Location,Dense,0.125,0.09090909090909091,0.14285714285714285,0.08431423425588572,66.45718032571797,TikTok:335;TikTok:41;TikTok:282;Reddit:14;Reddit:24;Places:784;Places:435;Places:995
+Where can I find Indian food in South Croydon?,Location,BM25,0.125,0.09090909090909091,0.125,0.07979453856244818,8.098305998525271,TikTok:282;TikTok:520;TikTok:559;Reddit:24;Reddit:21;Places:129;Places:963;Places:1013
+Where can I find Indian food in South Croydon?,Location,Hybrid,0.25,0.18181818181818182,0.16666666666666666,0.17441424290825341,72.06777799971557,TikTok:282;TikTok:528;TikTok:335;Reddit:24;Reddit:21;Places:1013;Places:331;Places:784
+Where can I find Indian food in Thornton Heath?,Location,Dense,0.25,0.2,0.2,0.1776461331976086,77.89644467023511,TikTok:614;TikTok:528;Reddit:24;Reddit:2;Places:668;Places:264;Places:920;Places:923
+Where can I find Indian food in Thornton Heath?,Location,BM25,0.0,0.0,0.0,0.0,9.80823633047597,TikTok:617;TikTok:528;TikTok:281;Reddit:24;Reddit:21;Places:259;Places:264;Places:578
+Where can I find Indian food in Thornton Heath?,Location,Hybrid,0.125,0.1,0.125,0.07979453856244818,103.64447233344738,TikTok:528;TikTok:614;TikTok:617;Reddit:24;Reddit:5;Places:264;Places:265;Places:250
+Where can I find sushi in Purley?,Location,Dense,0.375,0.75,0.16666666666666666,0.39233405721184117,68.17862499641099,TikTok:528;TikTok:396;TikTok:126;Reddit:12;Reddit:24;Places:49;Places:417;Places:46
+Where can I find sushi in Purley?,Location,BM25,0.0,0.0,0.0,0.0,4.790916330724333,TikTok:617;TikTok:281;TikTok:157;Reddit:12;Reddit:24;Places:319;Places:479;Places:1006
+Where can I find sushi in Purley?,Location,Hybrid,0.25,0.5,0.14285714285714285,0.2532778777010656,65.39599999571995,TikTok:528;TikTok:396;TikTok:126;Reddit:12;Reddit:24;Places:415;Places:49;Places:417
+Which restaurants serve halal food?,Dietary,Dense,0.25,0.14285714285714285,0.2,0.18216582889104613,88.19570833778319,TikTok:528;Reddit:24;Reddit:18;Places:729;Places:47;Places:735;Places:740;Places:446
+Which restaurants serve halal food?,Dietary,BM25,0.0,0.0,0.0,0.0,4.290514004727204,TikTok:344;TikTok:139;TikTok:630;Reddit:22;Reddit:16;Places:983;Places:1072;Places:1
+Which restaurants serve halal food?,Dietary,Hybrid,0.125,0.07142857142857142,0.14285714285714285,0.08431423425588572,82.11400033906102,TikTok:528;TikTok:344;TikTok:139;Reddit:24;Reddit:18;Places:729;Places:47;Places:735
+Where can I find vegan food in Croydon?,Dietary,Dense,0.125,0.02127659574468085,0.125,0.07979453856244818,82.07513933302835,TikTok:335;TikTok:282;TikTok:41;Reddit:24;Reddit:14;Places:510;Places:632;Places:995
+Where can I find vegan food in Croydon?,Dietary,BM25,0.125,0.02127659574468085,0.16666666666666666,0.0901000086523677,9.928472325555049,TikTok:282;TikTok:559;TikTok:617;Reddit:24;Reddit:21;Places:107;Places:1039;Places:319
+Where can I find vegan food in Croydon?,Dietary,Hybrid,0.125,0.02127659574468085,0.125,0.07979453856244818,74.64140266044221,TikTok:282;TikTok:559;TikTok:335;Reddit:24;Reddit:21;Places:510;Places:632;Places:995
+Where can I find vegan burgers in Croydon?,Dietary,Dense,0.125,1.0,0.16666666666666666,0.3562071871080222,66.91298633328795,TikTok:822;TikTok:574;TikTok:335;Reddit:8;Reddit:24;Places:107;Places:632;Places:510
+Where can I find vegan burgers in Croydon?,Dietary,BM25,0.125,1.0,0.16666666666666666,0.3562071871080222,4.911791664198972,TikTok:617;TikTok:281;TikTok:157;Reddit:12;Reddit:24;Places:107;Places:799;Places:309
+Where can I find vegan burgers in Croydon?,Dietary,Hybrid,0.125,1.0,0.16666666666666666,0.3562071871080222,71.00911099890557,TikTok:574;TikTok:822;TikTok:335;Reddit:24;Reddit:21;Places:107;Places:632;Places:510
+Where can I find food on a £20 budget in Croydon?,Price/Atmosphere,Dense,0.125,1.0,1.0,1.0,63.31691666370413,TikTok:335;TikTok:470;TikTok:2;Reddit:10;Reddit:21;Places:794;Places:699;Places:777
+Where can I find food on a £20 budget in Croydon?,Price/Atmosphere,BM25,0.125,1.0,1.0,1.0,8.263791663921438,TikTok:335;TikTok:528;TikTok:282;Reddit:24;Reddit:21;Places:793;Places:383;Places:1047
+Where can I find food on a £20 budget in Croydon?,Price/Atmosphere,Hybrid,0.125,1.0,1.0,1.0,76.0969863331411,TikTok:335;TikTok:528;TikTok:470;Reddit:10;Reddit:21;Places:794;Places:699;Places:777
+Which restaurants are good for a date night in Croydon?,Price/Atmosphere,Dense,0.125,0.0625,0.25,0.1089364926177559,81.18783366323139,TikTok:2;Reddit:25;Reddit:18;Places:239;Places:300;Places:670;Places:958;Places:699
+Which restaurants are good for a date night in Croydon?,Price/Atmosphere,BM25,0.0,0.0,0.0,0.0,8.955166670299755,TikTok:69;TikTok:470;TikTok:628;Reddit:25;Reddit:22;Places:259;Places:165;Places:491
+Which restaurants are good for a date night in Croydon?,Price/Atmosphere,Hybrid,0.125,0.0625,0.14285714285714285,0.08431423425588572,71.24137466598768,TikTok:2;TikTok:69;TikTok:470;Reddit:25;Reddit:18;Places:793;Places:239;Places:300
+Where can I find halal food near East Croydon station?,Combined,Dense,0.0,0.0,0.0,0.0,63.60583333298564,TikTok:139;TikTok:349;TikTok:282;Reddit:24;Reddit:21;Places:1049;Places:718;Places:796
+Where can I find halal food near East Croydon station?,Combined,BM25,0.0,0.0,0.0,0.0,6.666680332273245,TikTok:13;TikTok:2;TikTok:528;Reddit:24;Reddit:1;Places:877;Places:908;Places:983
+Where can I find halal food near East Croydon station?,Combined,Hybrid,0.0,0.0,0.0,0.0,70.17920832731761,TikTok:528;TikTok:139;TikTok:349;Reddit:24;Reddit:21;Places:1049;Places:718;Places:796
+Where can I find vegan food near East Croydon station?,Combined,Dense,0.0,0.0,0.0,0.0,61.63395799618835,TikTok:282;TikTok:335;TikTok:470;Reddit:14;Reddit:24;Places:510;Places:995;Places:632
+Where can I find vegan food near East Croydon station?,Combined,BM25,0.0,0.0,0.0,0.0,7.481875004790102,TikTok:13;TikTok:2;TikTok:528;Reddit:1;Reddit:24;Places:877;Places:107;Places:908
+Where can I find vegan food near East Croydon station?,Combined,Hybrid,0.0,0.0,0.0,0.0,70.42493066789272,TikTok:282;TikTok:335;TikTok:470;Reddit:24;Reddit:21;Places:510;Places:995;Places:632

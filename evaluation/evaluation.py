@@ -48,7 +48,7 @@ PROJECT_DIR = Path(__file__).resolve().parent
 RESULTS_FILE = PROJECT_DIR / "retrieval_evaluation_results.csv"
 # True: print ground-truth candidates only.
 # False: build indexes and run the final evaluation.
-LABELLING_MODE = True
+LABELLING_MODE = False
 
 # SOURCE_LIMITS, TOTAL_RESULTS and EMBEDDING_MODEL are imported from
 # src.rag so the evaluation always uses the live application's settings.

@@ -1,5 +1,3 @@
-C:\Users\mobolaji\OneDrive\Documents\Birkbeck 24_25\Project (2025_26)\RestoRec\evaluation\evaluation.py:34: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
-  from langchain_community.retrievers import BM25Retriever
 RestoRec retrieval evaluation
 Loading documents using the current rag.py loaders...
 TikTok: 858 documents
