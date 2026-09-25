@@ -312,19 +312,27 @@ The evaluation will then run the three retrieval methods and calculate their met
 
 ### Current results
 
-Queries	Method	Precision@8	Recall@8	MRR	nDCG@8	Time (ms)
-All 20	Dense	0.225	0.273	0.263	0.258	75.56
-All 20	BM25	0.119	0.185	0.136	0.153	8.42
-All 20	Hybrid	0.206	0.263	0.249	0.237	96.57
-14 matched	Dense	0.179	0.348	0.186	0.236	
-14 matched	BM25	0.116	0.256	0.159	0.179	
-14 matched	Hybrid	0.188	0.348	0.184	0.238	
+Retrieval Results for All 20 Queries
+
+| Method | Precision@8 | Recall@8 | MRR | nDCG@8 | Mean Retrieval Time (ms) |
+|---|---:|---:|---:|---:|---:|
+| **Dense** | 0.225 | 0.273 | 0.263 | 0.258 | 75.56 |
+| **BM25** | 0.119 | 0.185 | 0.136 | 0.153 | 8.42 |
+| **Hybrid** | 0.206 | 0.263 | 0.249 | 0.237 | 96.57 |
+
+Retrieval Results for 14 Matched Queries
+
+| Method | Precision@8 | Recall@8 | MRR | nDCG@8 |
+|---|---:|---:|---:|---:|
+| **Dense** | 0.179 | 0.348 | 0.186 | 0.236 |
+| **BM25** | 0.116 | 0.256 | 0.159 | 0.179 |
+| **Hybrid** | 0.188 | 0.348 | 0.184 | 0.238 |	
 
 Dense retrieval has a fallback that BM25 and hybrid retrieval lack. In six queries it replaced missing TikTok or Reddit documents with extra Places documents, which gave dense retrieval an advantage. The matched rows exclude those six queries, so all three methods are compared on the same source mix. To reproduce them, run the evaluation first, then:
 
-powershell
+```powershell
 python -u .\evaluation\matched_comparison.py
-
+```
 The script reports the source mix returned by each method, lists the affected queries and recomputes every metric on the 14 matched queries.
 
 ### Key findings
