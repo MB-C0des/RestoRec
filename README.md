@@ -20,9 +20,8 @@ The application follows a traditional RAG pipeline:
 
 ## System architecture
 
-![alt text](image.png)
-
-![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 The retrieval evaluation operates separately from answer generation. This makes it possible to compare retrieval methods without the results being affected by the language model.
 
